@@ -17,3 +17,4 @@ def _load_svg(filename: str) -> str:
 GITHUB_SVG = _load_svg("github.svg")
 LINKEDIN_SVG = _load_svg("linkedin.svg")
 PORTFOLIO_SVG = _load_svg("manoelja.svg")
+DATAONE_SVG = _load_svg("dataone.svg")

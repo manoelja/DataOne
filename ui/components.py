@@ -229,8 +229,8 @@ def render_analysis_tab(df: pd.DataFrame):
     for i, (icone, titulo, texto, cor) in enumerate(insights):
         with cols_ins[i % 2]:
             st.markdown(f"""
-            <div style="background:rgba({cor},0.08);border-left:4px solid rgba({cor},0.6);padding:12px 16px;border-radius:6px;margin-bottom:8px;">
-                <b>{icone} {titulo}</b><br><span style="color:#ccc;">{texto}</span>
+            <div class="insight-card" style="background:rgba({cor},0.08);border-left:4px solid rgba({cor},0.6);padding:12px 16px;border-radius:6px;margin-bottom:8px;">
+                <b>{icone} {titulo}</b><br>            <span style="color:#ccc;">{texto}</span>
             </div>
             """, unsafe_allow_html=True)
 
@@ -392,7 +392,7 @@ def _icon_html(href: str, svg_b64: str, alt: str, title: str) -> str:
     <a href="{href}" target="_blank" title="{title}"
        style="display:flex;align-items:center;justify-content:center;width:100%;height:38px;
               background:white;border:1px solid white;border-radius:6px;text-decoration:none;
-              cursor:pointer;box-sizing:border-box;">
+              cursor:pointer;box-sizing:border-box;transition:all 0.2s ease;">
         <img src="data:image/svg+xml;base64,{svg_b64}" width="20" height="20" alt="{alt}"
              style="{img_filter}"/>
     </a>

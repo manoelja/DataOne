@@ -11,7 +11,7 @@ import pandas as pd
 import streamlit as st
 
 from core import data_processing, rh_tools
-from ui import components
+from ui import assets, components
 
 
 # ===================== Gestão de Estado =====================
@@ -136,7 +136,8 @@ def _processar_action_rh(state_obj: AppState) -> None:
 # ===================== Main =====================
 
 def main():
-    st.set_page_config(page_title="DATAONE", page_icon="🎲", layout="wide")
+    favicon = f"data:image/svg+xml;base64,{assets.DATAONE_SVG}" if assets.DATAONE_SVG else "🎲"
+    st.set_page_config(page_title="DATAONE", page_icon=favicon, layout="wide")
     st.set_option("client.showErrorDetails", False)
     
     if "show_developer" not in st.session_state:
